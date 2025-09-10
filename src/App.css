@@ -1,0 +1,14 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  background-color: #f5f7fa;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+button {
+  cursor: pointer;
+}
