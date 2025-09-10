@@ -69,7 +69,9 @@ Project Structure
   ├── index.jsx
   └── dashboard.json
 
+🚀 Live Demo
 
+Check out the live site [here](https://front-end-assignment-1.netlify.app/)
 
 
 
