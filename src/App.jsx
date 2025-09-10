@@ -22,6 +22,7 @@ function App() {
   }))
 
   //.filter( (ca)=>ca.widgets.length > 0 )
+  
   return (
     <div className="app">
       <h1>Dashboard</h1>

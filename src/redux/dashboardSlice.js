@@ -1,11 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 import initialData from '../dashboard.json/';
 
+const saveToLocalStorage = (categories) => {
+  localStorage.setItem('categories', JSON.stringify(categories));
+};
 
+
+const storedCategories = localStorage.getItem('categories');
+const initialState = {
+  categories: storedCategories ? JSON.parse(storedCategories) : initialData.categories,
+};
 
 const dashboardSlice = createSlice({
   name: 'dashboard',
-  initialState: initialData,
+  initialState,
   reducers: {
     addWidgetToCategory: (state, action) => {
       const { categoryId, widget } = action.payload;
@@ -20,6 +28,7 @@ const dashboardSlice = createSlice({
           category.widgets.push(widget);
         }
       }
+      saveToLocalStorage(state.categories);
 
     },
 
@@ -31,6 +40,7 @@ const dashboardSlice = createSlice({
         category.widgets = category.widgets.filter(w => w.id !== widgetId);
       }
 
+      saveToLocalStorage(state.categories);
     }
   }
 });
