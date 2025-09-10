@@ -1,12 +1,72 @@
-# React + Vite
+# Dynamic Dashboard with Widgets
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React application using Redux Toolkit for state management.
+It allows users to dynamically manage a dashboard with multiple categories and widgets.
 
-Currently, two official plugins are available:
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1 Dynamically build the dashboard UI from a JSON file containing categories and widgets.
 
-## Expanding the ESLint configuration
+2 Users can dynamically:
+                     Add a widget to any category by specifying widget name and widget text.
+                     Remove a widget from a category using a cross (X) button.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3 Each widget displays random text for demonstration purposes.
+
+4 Users can search across all widgets using a search bar.
+
+5 The entire state is managed via Redux and persisted in localStorage so data remains on page reload.
+
+Tech Stack
+ React
+ Redux Toolkit (for state management)
+ LocalStorage (for persistence)
+ CSS (for styling)
+ Vite (build tool)
+
+JSON Structure (Sample)
+
+{
+  "categories": [
+    {
+      "id": "cspm",
+      "name": "CSPM Executive Dashboard",
+      "widgets": [
+        { "id": "w1", "name": "Cloud Accounts", "text": "Random text for Cloud Accounts" }
+      ]
+    },
+    {
+      "id": "cwpp",
+      "name": "CWPP Dashboard",
+      "widgets": []
+    }
+  ]
+}
+
+To Run Locally
+
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+npm install
+npm run dev
+
+Project Structure
+
+/src
+  ├── /components
+  │    ├── Category.jsx
+  │    ├── Widget.jsx
+  │    ├── AddWidgetModal.jsx
+  │    ├── SearchBar.jsx
+  │    └── ...
+  ├── /redux
+  │    ├── dashboardSlice.js
+  │    └── store.js
+  ├── App.jsx
+  ├── index.jsx
+  └── dashboard.json
+
+
+
+
+
