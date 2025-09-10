@@ -45,9 +45,12 @@ JSON Structure (Sample)
 
 To Run Locally
 
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/NikhilGathal/Front-End-Assignment.git
+
 cd your-repo-name
+
 npm install
+
 npm run dev
 
 Project Structure
